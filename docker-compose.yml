@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+
+  # Define your individual services
+  flask:
+    # Build the flask service using the docker file in "flask" directory
+    build: ./flask
+
+    # Give our flask container a friendly name
+    container_name: flask
+    restart: always
+    environment: 
+      - APP_NAME=MyFlaskApp
+    expose: 
+    - 8080
+  
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports: 
+     - "80:80"
