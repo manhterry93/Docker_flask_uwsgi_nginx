@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.4"
 
 services:
 
@@ -6,9 +6,10 @@ services:
   flask:
     # Build the flask service using the docker file in "flask" directory
     build: ./flask
-
+    image: fask_manh
     # Give our flask container a friendly name
-    container_name: flask
+    container_name: flask_manh
+
     restart: always
     environment: 
       - APP_NAME=MyFlaskApp
@@ -17,7 +18,8 @@ services:
   
   nginx:
     build: ./nginx
-    container_name: nginx
+    container_name: nginx_manh
+    image: nginx_manh
     restart: always
     ports: 
      - "80:80"
