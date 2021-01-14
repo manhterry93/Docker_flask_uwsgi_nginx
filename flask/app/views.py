@@ -2,6 +2,7 @@ from app import app
 from app import User
 @app.route("/")
 def index():
+    print ("on request comming")
     users = User.query.all()
     if users is None:
         return ":Hello from Flask"
