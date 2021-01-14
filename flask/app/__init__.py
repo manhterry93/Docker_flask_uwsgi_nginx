@@ -2,8 +2,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
 #postgresql://[user]:[password]@[ip]/[dbname]
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:postgres@192.168.1.200:5435/postgres' 
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:postgres@127.0.0.1:5435/postgres' 
 db = SQLAlchemy(app)
 
 class User(db.Model):
@@ -13,7 +14,7 @@ class User(db.Model):
 
     def __init__(self, name, email):
         self.name=name
-        self.email=emails
+        self.email=email
 
     def __repr__(self):
         return '<User %r>' % self.username   

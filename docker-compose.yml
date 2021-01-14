@@ -2,6 +2,13 @@ version: "3.4"
 
 services:
 
+  haproxy:
+    build: ./haproxy
+    image: haproxy_manh
+    container_name: haproxy_manh
+    ports:
+      - "8081:80"
+
   # Define your individual services
   flask:
     # Build the flask service using the docker file in "flask" directory
@@ -13,8 +20,8 @@ services:
     restart: always
     environment: 
       - APP_NAME=MyFlaskApp
-    expose: 
-    - 8080
+    ports:
+      - "8080:8080"
   
   nginx:
     build: ./nginx
