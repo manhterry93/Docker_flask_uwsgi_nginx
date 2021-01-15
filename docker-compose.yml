@@ -18,8 +18,8 @@ services:
   
   nginx:
     build: ./nginx
-    container_name: nginx_manh
+    container_name: nginx_manh_py_uwsgi
     image: nginx_manh
     restart: always
     ports: 
-     - "80:80"
+     - "8000:80"
