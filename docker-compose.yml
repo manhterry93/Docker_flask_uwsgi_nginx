@@ -22,6 +22,8 @@ services:
       - APP_NAME=MyFlaskApp
     ports:
       - "8080:8080"
+    sysctls:
+      - net.core.somaxconn=4096  
   
   nginx:
     build: ./nginx

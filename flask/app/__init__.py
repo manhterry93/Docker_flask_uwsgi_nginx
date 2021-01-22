@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 #postgresql://[user]:[password]@[ip]/[dbname]
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:postgres@46.101.194.177:5435/postgres' 
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:postgres@192.168.1.200:5435/postgres' 
 db = SQLAlchemy(app)
 
 class User(db.Model):
